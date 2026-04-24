@@ -1,0 +1,42 @@
+AWS-3-sys/
+├── backend/
+│   ├── app/
+│   │   ├── models/
+│   │   │   └── user.py             # SQLAlchemy Database Model
+│   │   ├── routers/
+│   │   │   ├── health.py           # Health Check API Endpoint
+│   │   │   └── users.py            # User Management API Endpoints
+│   │   ├── services/
+│   │   │   └── user_service.py     # Business Logic & DB Operations
+│   │   ├── utils/
+│   │   │   ├── logger.py           # Structured JSON Logging (CloudWatch)
+│   │   │   └── failure_simulation.py # Reliability Engineering Testing
+│   │   ├── database.py             # DB Connection & Session Management
+│   │   └── main.py                 # FastAPI Entry Point & Metrics Middleware
+│   ├── Dockerfile                  # Multi-stage Python Build
+│   └── requirements.txt            # Backend Dependencies (including prometheus-client)
+├── frontend/
+│   ├── public/
+│   │   └── index.html              # HTML Template (React Entry)
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard.jsx       # Main Dashboard UI
+│   │   │   ├── UserForm.jsx        # User Creation Form
+│   │   │   └── UserList.jsx        # Responsive Data Table
+│   │   ├── services/
+│   │   │   └── api.js              # Axios Client & API Calls
+│   │   ├── App.jsx                 # Main Layout & Navigation
+│   │   ├── index.css               # Tailwind CSS & Design System
+│   │   └── index.js                # React Root Renderer
+│   ├── Dockerfile                  # Multi-stage Nginx Build
+│   ├── nginx.conf                  # Nginx Proxy & SPA Config
+│   ├── package.json                # Frontend Dependencies
+│   └── tailwind.config.js          # Tailwind Design Tokens
+├── monitoring/
+│   ├── prometheus.yml              # Prometheus Scrape Configuration
+│   └── alert.rules.yml             # Prometheus Alerting Rules
+├── runbooks/
+│   └── high-latency.md             # Incident Response Guide
+├── docker-compose.yml              # Multi-tier Service Orchestration
+├── structure.txt                   # Project Structure (Current File)
+└── README.md                       # Project Documentation
